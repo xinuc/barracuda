@@ -8,4 +8,4 @@ var server = net.createServer(function(socket){
   });
 });
 
-server.listen(7777, 'localhost');
+server.listen(7777, "192.168.1.33");
