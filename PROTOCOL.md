@@ -1,2 +1,5 @@
-select {game}
-
+{"subscribe":"$username"} in
+{"response": "accepted"|"rejected", "error": "$errorMessage"} out
+{"playing": "$partnerUsername"} out
+{"board": [0,0,0,0,0,0,0,0,0], "status": null|"win"|"lose", "moving": true|false} out
+{"move": x} in
