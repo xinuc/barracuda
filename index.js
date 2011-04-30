@@ -1,6 +1,6 @@
 var _ = require('./vendor/underscore')._;
 var net = require('net');
-var tictactoe = require('./lib/tictactoe/game');
+var tictactoe = require('./lib/tictactoe/index');
 
 var server = net.createServer(function(socket){
   _.each(["connect", "data", "end", "timeout", "drain", "error", "close"], function(event){
