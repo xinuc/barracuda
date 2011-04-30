@@ -1,8 +1,12 @@
+var _ = require('./vendor/underscore')._;
 var net = require('net');
-var protocol = require('./lib/protocol');
+var tictactoe = require('./lib/tictactoe/game');
 
 var server = net.createServer(function(socket){
-  socket.on("data", protocol.handler);
+  console.log("Listening on port 8808");
+  _.each(["connect", "data", "end", "timeout", "drain", "error", "close"], function(event){
+    socket.on(event, tictactoe.handlers[event]);
+  });
 });
 
 server.listen(8808, 'localhost');
